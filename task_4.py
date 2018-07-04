@@ -10,6 +10,9 @@ def character(input_string):
 
 
 source = urllib.urlopen('http://www.pythonchallenge.com/pc/def/equality.html').read()
-strings = re.findall('[A-Z]{3}[a-z]{1}[A-Z]{3}', source)
-#print character(strings[0])
-print strings
+strings = re.findall('[a-z]{1}[A-Z]{3}[a-z]{1}[A-Z]{3}[a-z]{1}', source)
+
+result = ''
+for piece in strings:
+	result += piece[4]
+print result
